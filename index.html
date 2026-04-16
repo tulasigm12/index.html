@@ -1,1 +1,70 @@
+import { Card, CardContent } from "@/components/ui/card"; import { Button } from "@/components/ui/button"; import { motion } from "framer-motion";
+
+export default function BestDegreeCollegeWebsite() { const faculty = [ { name: "Dr. Anil Kumar", department: "Computer Science", qualification: "Ph.D" }, { name: "Prof. Meera Sharma", department: "Commerce", qualification: "M.Com" }, { name: "Dr. Ravi Patel", department: "Science", qualification: "Ph.D" }, { name: "Prof. Sneha Rao", department: "Arts", qualification: "M.A" }, ];
+
+const features = [ "Online Admission", "Student Portal", "Digital Library", "Online Fee Payment", "Placement Cell", "Transport Facility", ];
+
+return ( <div className="min-h-screen bg-slate-50 text-gray-800"> <header className="bg-blue-800 text-white p-6 shadow-lg"> <div className="max-w-7xl mx-auto flex justify-between items-center"> <h1 className="text-3xl font-bold">Best Degree College</h1> <select className="px-3 py-2 rounded-xl text-black"> <option>English</option> <option>Hindi</option> <option>Kannada</option> </select> </div> </header>
+
+<section className="py-20 text-center px-6">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+      <h2 className="text-5xl font-bold mb-4">Empowering Future Leaders</h2>
+      <p className="max-w-3xl mx-auto text-lg">
+        Best Degree College offers quality education with experienced faculty,
+        modern infrastructure, and excellent placement support.
+      </p>
+      <Button className="mt-8 rounded-2xl px-8 py-6 text-lg">Apply Now</Button>
+    </motion.div>
+  </section>
+
+  <section className="max-w-7xl mx-auto px-6 py-12">
+    <h3 className="text-3xl font-semibold mb-8">College Features</h3>
+    <div className="grid md:grid-cols-3 gap-6">
+      {features.map((feature) => (
+        <Card key={feature} className="rounded-2xl shadow-md">
+          <CardContent className="p-6 text-center text-lg">{feature}</CardContent>
+        </Card>
+      ))}
+    </div>
+  </section>
+
+  <section className="bg-gray-100 py-12 px-6">
+    <div className="max-w-7xl mx-auto">
+      <h3 className="text-3xl font-semibold mb-8">Our Faculty</h3>
+      <div className="grid md:grid-cols-2 gap-6">
+        {faculty.map((teacher) => (
+          <Card key={teacher.name} className="rounded-2xl shadow-md">
+            <CardContent className="p-6">
+              <h4 className="text-xl font-bold">{teacher.name}</h4>
+              <p>{teacher.department}</p>
+              <p className="text-sm text-gray-600">{teacher.qualification}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section className="max-w-4xl mx-auto px-6 py-12">
+    <h3 className="text-3xl font-semibold mb-6">Contact Us</h3>
+    <form className="space-y-4">
+      <input type="text" placeholder="Your Name" className="w-full p-3 border rounded-2xl" />
+      <input type="email" placeholder="Email Address" className="w-full p-3 border rounded-2xl" />
+      <textarea rows="4" placeholder="Your Message" className="w-full p-3 border rounded-2xl"></textarea>
+      <Button className="rounded-2xl px-8">Submit</Button>
+    </form>
+  </section>
+
+  <footer className="bg-blue-800 text-white text-center py-4">
+    © 2026 Best Degree College | All Rights Reserved
+  </footer>
+</div>
+
+); }
+
+
+
+
+
+
 
